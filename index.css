@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    font-size: 62.5%;
+    font-family: 'Inter', sans-serif;
+
+    --bg-color: #F3F5FC;
+    --side-screen-bg: #FFFFFF;
+    --primary-button-color: #0A3871;
+    --secondary-button-color: #F3F5FC;
+    
+    --primary-text-color: #0A3871;
+    --secondary-text-color: #FFFFFF;
+    --regular-text-color: #495057;
+    --bold-text-color: #343A40;
+}
