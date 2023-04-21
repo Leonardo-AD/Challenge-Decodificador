@@ -11,9 +11,43 @@
 
     <link rel="stylesheet" href="./index.css">
     <script src="./script.js" defer></script>
+    <link rel="shortcut icon" href="./assets/logo-private-key.png" type="image/x-icon">
     <title>Decodificador</title>
 </head>
 <body>
+    <main class="content-main">
+        <div class="content-main__text-field">
+            <img src="./assets/logo.svg" alt="logo da alura">
+
+            <textarea name="text-field" id="text-field" placeholder="Digite seu texto" cols="30" rows="10"></textarea>
+
+            <div class="caution-text">
+                <img src="./assets/caution.svg" alt="ícone de atenção">
+                <span class="hint">Apenas letras minúsculas e sem acento.</span>
+            </div>
+
+            <div class="action-buttons">
+                <button class="cryptograph-button">Criptografar</button>
+                <button class="decryption-button">Descriptografar</button>
+            </div>
+        </div>
+
+        <div class="content-main__show-message">
+            <div class="area-show-message">
+                <img src="./assets/background-image.svg" alt="animação de uma pessoa segurando uma lupa">
     
+                <h3 id="text-not-found">Nenhuma mensagem encontrada</h3>
+                <span>Digite um texto que você deseja criptografar ou descriptografar.</span>
+            </div>
+
+            <button>Copiar</button>
+        </div>
+    </main>
+
+    <footer class="contact-area">
+        <span id="linkedin">LinkedIn</span>
+        <span id="github">GitHub</span>
+        <span id="instagram">Instagram</span>
+    </footer>
 </body>
 </html>
