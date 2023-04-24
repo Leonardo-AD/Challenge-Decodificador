@@ -11,7 +11,7 @@
     font-family: 'Inter', sans-serif;
 
     --bg-color: #F3F5FC;
-    --side-screen-bg: #FFFFFF;
+    --show-message-bg: #FFFFFF;
     --primary-button-color: #0A3871;
     --secondary-button-color: #F3F5FC;
     
@@ -19,4 +19,90 @@
     --secondary-text-color: #FFFFFF;
     --regular-text-color: #495057;
     --bold-text-color: #343A40;
+}
+
+body { 
+    background: var(--bg-color);
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* Text field */
+.content-main__text-field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-area > img {
+    vertical-align: top;
+    width: 3.2rem;
+    height: 4.8rem;
+    margin: 3rem 4rem;
+}
+
+.content-main__text-field textarea {
+    margin: 10rem 3rem 3rem;
+    padding: 1rem;
+    min-width: 60rem;
+    min-height: 38rem;
+    font-size: 3.2rem;
+
+    color: var(--primary-text-color);
+    border: none;
+    outline: none;
+    background: var(--bg-color);
+    resize: none;
+}
+
+textarea::placeholder {
+    font-family: 'Inter', sans-serif;
+    font-size: 3.2rem;
+    color: var(--primary-text-color);
+}
+
+.caution-text {
+    text-align: left;
+}
+
+.action-buttons {
+    margin: 3rem auto;
+    text-align: left;
+}
+
+.action-buttons button {
+    width: 25rem;
+}
+
+
+/* Show message */
+.content-main__show-message {
+    background: var(--show-message-bg);
+    width: 38rem;
+    height: 60rem;
+    margin: 3rem 3rem;
+    border-radius: 3.2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-main__show-message .area-show-message img {
+    width: 33rem;
+    height: 30rem;
+}
+
+
+/* Contact area */
+.contact-area{
+    margin: 1rem;
 }
