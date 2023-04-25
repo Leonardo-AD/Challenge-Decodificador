@@ -25,34 +25,29 @@ body {
     background: var(--bg-color);
 }
 
-main{
+
+/* Text field */
+.content-main {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    /* flex-wrap: wrap; */
     justify-content: space-between;
 }
 
-
-/* Text field */
-.content-main__text-field {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.content-main__container {
+    height: 100vh;
+    width: 100vw;
 }
 
 .text-area > img {
-    vertical-align: top;
-    width: 3.2rem;
-    height: 4.8rem;
-    margin: 3rem 4rem;
+    margin: 3rem 4rem 3rem 6rem;
+    vertical-align: top
 }
 
-.content-main__text-field textarea {
-    margin: 10rem 3rem 3rem;
+.content-main .text-area textarea {
+    margin: 12rem 0 3rem 5rem;
     padding: 1rem;
-    min-width: 60rem;
-    min-height: 38rem;
+    width: 66rem;
+    height: 44rem;
     font-size: 3.2rem;
 
     color: var(--primary-text-color);
@@ -69,25 +64,54 @@ textarea::placeholder {
 }
 
 .caution-text {
-    text-align: left;
+    display: flex;
+    margin-bottom: 1.6rem;
+    gap: .8rem;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 19.2rem;
+}
+
+.caution-text span {
+    font-size: 1.2rem;
+    color: var(--regular-text-color);
 }
 
 .action-buttons {
-    margin: 3rem auto;
+    display: flex;
+    gap: 2.4rem;
+    padding-left: 19.2rem;
     text-align: left;
 }
 
 .action-buttons button {
-    width: 25rem;
+    padding: 2.4rem 11rem;
+    font-size: 1.6rem;
+    border: none;
+    border-radius: 2.4rem;
+    cursor: pointer;
+}
+
+.action-buttons .cryptograph-button {
+    background: var(--primary-button-color);
+    color: var(--secondary-text-color);
+    letter-spacing: .05rem;
+}
+
+.action-buttons .decryption-button {
+    background: var(--secondary-button-color);
+    color: var(--primary-text-color);
+    border: 1px solid var(--primary-button-color);
+    letter-spacing: .05rem;
 }
 
 
 /* Show message */
 .content-main__show-message {
     background: var(--show-message-bg);
-    width: 38rem;
-    height: 60rem;
-    margin: 3rem 3rem;
+    min-width: 40rem;
+    min-height: 60rem;
+    margin: 3rem;
     border-radius: 3.2rem;
 
     display: flex;
@@ -96,9 +120,29 @@ textarea::placeholder {
     align-items: center;
 }
 
-.content-main__show-message .area-show-message img {
+.area-show-message {
     width: 33rem;
-    height: 30rem;
+}
+
+.area-show-message h3 {
+    text-align: center;
+    line-height: 148%;
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: var(--bold-text-color);
+    margin: 1.6rem;
+}
+
+.area-show-message span {
+    display: block;
+    line-height: 148%;
+    font-size: 1.6rem;
+    color: var(--regular-text-color);
+    text-align: center;
+}
+
+.content-main__show-message button {
+    display: none;
 }
 
 
