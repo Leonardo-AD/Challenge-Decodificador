@@ -29,7 +29,6 @@ body {
 /* Text field */
 .content-main {
     display: flex;
-    /* flex-wrap: wrap; */
     justify-content: space-between;
 }
 
@@ -39,12 +38,12 @@ body {
 }
 
 .text-area > img {
-    margin: 3rem 4rem 3rem 6rem;
+    margin: 3rem 4rem 3rem 4rem;
     vertical-align: top
 }
 
 .content-main .text-area textarea {
-    margin: 12rem 0 3rem 5rem;
+    margin: 12rem 0 3rem 0;
     padding: 1rem;
     width: 66rem;
     height: 44rem;
@@ -69,7 +68,7 @@ textarea::placeholder {
     gap: .8rem;
     align-items: center;
     justify-content: flex-start;
-    padding-left: 19.2rem;
+    padding-left: 12.2rem;
 }
 
 .caution-text span {
@@ -80,16 +79,17 @@ textarea::placeholder {
 .action-buttons {
     display: flex;
     gap: 2.4rem;
-    padding-left: 19.2rem;
+    padding-left: 12.2rem;
     text-align: left;
 }
 
 .action-buttons button {
-    padding: 2.4rem 11rem;
+    padding: 2.4rem 9rem;
     font-size: 1.6rem;
     border: none;
     border-radius: 2.4rem;
     cursor: pointer;
+    width: 32rem;
 }
 
 .action-buttons .cryptograph-button {
@@ -118,15 +118,27 @@ textarea::placeholder {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+
+    box-shadow: 0 2.4rem 3.2rem -.8rem rgba(0, 0, 0, 8%);
 }
 
-.area-show-message {
+.content-main__show-message p {
+    font-size: 2.4rem;
+    line-height: 150%;
+    color: var(--regular-text-color);
+    text-align: left;
+    margin: 0 0 4rem;
+    flex: 1;
+    display: inline-block;
     width: 33rem;
+    max-height: 52rem;
+    display: none;
 }
 
 .area-show-message h3 {
     text-align: center;
-    line-height: 148%;
+    line-height: 118%;
     font-size: 2.4rem;
     font-weight: bold;
     color: var(--bold-text-color);
@@ -139,14 +151,28 @@ textarea::placeholder {
     font-size: 1.6rem;
     color: var(--regular-text-color);
     text-align: center;
+    margin: 0 5rem;
 }
 
 .content-main__show-message button {
     display: none;
+    padding: 2.4rem 9rem;
+    font-size: 1.6rem;
+    border: none;
+    width: 31rem;
+    border-radius: 2.4rem;
+    cursor: pointer;
+
+    background: var(--show-message-bg);
+    color: var(--primary-text-color);
+    border: 1px solid var(--primary-button-color);
+    letter-spacing: .05rem;
 }
 
 
 /* Contact area */
 .contact-area{
-    margin: 1rem;
+    margin-top: 3rem;
+    padding: 4rem 2rem;
+    background: var(--primary-text-color);
 }
