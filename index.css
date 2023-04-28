@@ -44,7 +44,7 @@ body {
 
 .content-main .text-area textarea {
     margin: 12rem 0 3rem 0;
-    padding: 1rem;
+    padding: .8rem;
     width: 66rem;
     height: 44rem;
     font-size: 3.2rem;
@@ -68,7 +68,7 @@ textarea::placeholder {
     gap: .8rem;
     align-items: center;
     justify-content: flex-start;
-    padding-left: 12.2rem;
+    padding-left: 12.7rem;
 }
 
 .caution-text span {
@@ -79,17 +79,18 @@ textarea::placeholder {
 .action-buttons {
     display: flex;
     gap: 2.4rem;
-    padding-left: 12.2rem;
+    padding-left: 12.7rem;
     text-align: left;
 }
 
 .action-buttons button {
-    padding: 2.4rem 9rem;
+    padding: 2.4rem 1rem;
     font-size: 1.6rem;
     border: none;
     border-radius: 2.4rem;
     cursor: pointer;
     width: 32rem;
+    text-align: center;
 }
 
 .action-buttons .cryptograph-button {
@@ -110,9 +111,10 @@ textarea::placeholder {
 .content-main__show-message {
     background: var(--show-message-bg);
     min-width: 40rem;
-    min-height: 60rem;
+    max-height: 70rem;
     margin: 3rem;
     border-radius: 3.2rem;
+    height: 100vh;
 
     display: flex;
     flex-direction: column;
@@ -128,11 +130,15 @@ textarea::placeholder {
     line-height: 150%;
     color: var(--regular-text-color);
     text-align: left;
-    margin: 0 0 4rem;
+    margin: 0 0 3.7rem;
     flex: 1;
     display: inline-block;
     width: 33rem;
     max-height: 52rem;
+    /* display: none; */
+}
+
+.area-show-message {
     display: none;
 }
 
@@ -155,7 +161,7 @@ textarea::placeholder {
 }
 
 .content-main__show-message button {
-    display: none;
+    /* display: none; */
     padding: 2.4rem 9rem;
     font-size: 1.6rem;
     border: none;
@@ -180,7 +186,7 @@ textarea::placeholder {
     text-align: center;
 }
 .contact-area p {
-    margin-bottom: 1.6rem;
+    margin-top: 1.6rem;
     color: var(--secondary-text-color);
     font-size: 1.4rem;
 }
@@ -214,4 +220,115 @@ i::after {
 i:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+
+/* Responsivity */
+@media screen and (max-width: 1250px) {
+    .action-buttons button {
+        width: 28rem;
+    }
+
+    .content-main .text-area textarea {
+        margin: 2rem 3rem 3rem 3rem;
+        padding: .8rem;
+        width: 60rem;
+    }
+
+    .content-main__show-message {
+        margin-left: 7rem;
+        min-width: 36rem;
+    }
+
+    .content-main__show-message p {
+        width: 28rem;
+        margin: 0 0 5.4rem;
+    }
+
+    .content-main__show-message button {
+        width: 28rem;
+    }
+
+    .caution-text {
+        padding-left: 3.7rem;
+    }
+
+    .action-buttons {
+        padding-left: 3.7rem;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .action-buttons button {
+        width: 25rem;
+    }
+
+    .content-main .text-area textarea {
+        margin: 2rem 5rem 3rem 3rem;
+        padding: .8rem;
+        width: 55rem;
+        font-size: 2.8rem;
+    }
+
+    textarea::placeholder {
+        font-size: 2.8rem;
+    }
+
+    .content-main__show-message {
+        min-width: 30rem;
+        margin-left: 6rem;
+    }
+
+    .content-main__show-message p {
+        width: 26rem;
+        font-size: 2rem;
+        margin: 0 0 5.4rem;
+    }
+
+    .area-show-message img {
+        width: 28rem;
+    }
+
+    .area-show-message h3 {
+        font-size: 2rem;
+    }
+
+    .area-show-message span {
+        font-size: 1.4rem;
+        margin: 0 1rem;
+    }
+
+    .content-main__show-message button {
+        width: 25rem;
+    }
+}
+
+@media screen and (max-width: 1030px) {
+    .content-main .text-area textarea {
+        margin: 2rem 0 3rem 3rem;
+        padding: .8rem;
+        width: 55rem;
+        font-size: 2.8rem;
+    }
+
+    textarea::placeholder {
+        font-size: 2.8rem;
+    }
+
+    .content-main__show-message {
+        min-width: 30rem;
+        margin-left: 2rem;
+    }
+
+    .content-main__show-message p {
+        width: 26rem;
+        font-size: 2rem;
+        margin: 0 0 5.4rem;
+    }
+}
+
+@media screen and (max-width: 940px) {
+    .content-main {
+        flex-wrap: wrap;
+    }
 }
