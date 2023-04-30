@@ -121,6 +121,7 @@ textarea::placeholder {
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 2rem 0;
 
     box-shadow: 0 2.4rem 3.2rem -.8rem rgba(0, 0, 0, 8%);
 }
@@ -135,11 +136,11 @@ textarea::placeholder {
     display: inline-block;
     width: 33rem;
     max-height: 52rem;
-    /* display: none; */
+    display: none;
 }
 
 .area-show-message {
-    display: none;
+    /* display: none; */
 }
 
 .area-show-message h3 {
@@ -161,7 +162,7 @@ textarea::placeholder {
 }
 
 .content-main__show-message button {
-    /* display: none; */
+    display: none;
     padding: 2.4rem 9rem;
     font-size: 1.6rem;
     border: none;
@@ -330,5 +331,130 @@ i:hover::after {
 @media screen and (max-width: 940px) {
     .content-main {
         flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .content-main__container {
+        width: 100vw;
+    }
+
+    .content-main .text-area textarea {
+        margin: 2rem 3rem 3rem 3rem;
+        width: 90vw;
+    }
+
+    .action-buttons {
+        width: 94vw;
+    }
+    
+    .action-buttons button {
+        width: 100vw;
+        text-align: center;
+    }
+
+    .content-main {
+        width: 100vw;
+    }
+    
+    .content-main__show-message {
+        width: 90vw;
+        max-height: 15vh;
+        margin: 3rem;
+    }
+
+    .content-main__show-message h3 {
+        margin: 0 1.6rem 1.6rem;
+    }
+
+    .content-main__show-message span {
+        margin: 0 1.6rem;
+    }
+
+    .area-show-message img {
+        display: none;
+    }
+    
+    .content-main__show-message p {
+        min-width: 84vw;
+        margin: 0 0 3.2rem;
+    }
+
+    .content-main__show-message button {
+        width: 84vw;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .content-main__show-message p {
+        min-width: 80vw;
+        margin: 0 0 3.2rem;
+    }
+
+    .content-main .text-area textarea {
+        height: 90vw;
+    }
+
+    .content-main__show-message {
+        width: 90vw;
+        max-height: 50vh;
+        /* max-height: 20vh; */
+        margin: 3rem;
+    }
+
+    .content-main__show-message button {
+        width: 80vw;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .action-buttons {
+        display: block;
+    }
+
+    .content-main__show-message {
+        margin-top: 10rem;
+    }
+    
+    .action-buttons button {
+        width: 90vw;
+        margin-bottom: 3.2rem;
+    }
+
+    .content-main__show-message p {
+        min-width: 75vw;
+        margin: 0 0 3.2rem;
+    }
+
+    .content-main__show-message button {
+        width: 75vw;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .content-main .text-area textarea {
+        margin: 2rem 3rem 3rem 3rem;
+        width: 80vw;
+    }
+
+    .action-buttons {
+        display: block;
+    }
+    
+    .action-buttons button {
+        width: 80vw;
+        margin-bottom: 3.2rem;
+    }
+
+    .content-main__show-message {
+        margin-top: 20rem;
+    }
+
+    .content-main__show-message p {
+        min-width: 75vw;
+        margin: 0 0 3.2rem;
+    }
+
+    .content-main__show-message button {
+        width: 75vw;
     }
 }
