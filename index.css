@@ -471,3 +471,17 @@ i:hover::after {
         width: 75vw;
     }
 }
+
+@media screen and (max-width: 350px) {
+    .content-main__container {
+        height: 100vh;
+    }
+
+    .content-main__show-message {
+        margin-top: 20rem;
+    }
+
+    .content-main__show-message {
+        max-height: 32vh;
+    }
+}
