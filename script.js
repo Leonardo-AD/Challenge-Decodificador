@@ -1,6 +1,9 @@
 // Importing variables
-
-import { cryptographButton, decryptionButton, textField } from "./export.js";
+import { 
+    cryptographButton, decryptionButton, 
+    textField, showMessageArea, resultMessage,
+    copyButton
+} from "./export.js";
 
 cryptographButton.addEventListener("click", () => {
     
@@ -20,6 +23,28 @@ cryptographButton.addEventListener("click", () => {
 
 function cryptograph(){
     
+    let getText = textField.value.split(' ')
+
+    for(let i = 0; i < getText.length; i++){
+
+        if(getText[i].includes("a") || getText[i].includes("e") || getText[i].includes("i") || getText[i].includes("o") || getText[i].includes("u")){
+            
+            showMessageArea.style.display = "none"
+            resultMessage.style.display   = "block"
+            copyButton.style.display      = "inline"    
+            
+            resultMessage.innerHTML += `${getText[i]
+                                            .replace(/e/gi, "enter")
+                                            .replace(/i/gi, "imes")
+                                            .replace(/a/gi, "ai")
+                                            .replace(/o/gi, "ober")
+                                            .replace(/u/gi, "ufat")} `
+        }
+    }
+
+    return
+}
+
     // function regexpExec() {
     //     let regexp = new RegExp(/[*&$#@!++]/i)
     //     let n = regexp.exec(textField.value)   
@@ -49,17 +74,18 @@ function cryptograph(){
     // const regexpCurrencyOrPunctuation = /\p{Sc}|\p{P}/gu;
     // console.log(sentence.match(regexpCurrencyOrPunctuation));
 
-
-    function verifyPunctuation(){
+    /*function verifyPunctuation(){
         const sentence = textField.value
         const regexpCurrencyOrPunctuation = /\p{Sc}|\p{P}|\p{Sm}|\p{Lu}/gu;
         console.log(sentence.match(regexpCurrencyOrPunctuation))
         // get uppercase \p{Lu}
         // get accent ?     pulse alert icon 
+        //edit variables and function name
 
         // https://javascript.info/regexp-introduction#testing-regexp-test --- (Test with á é í ó ú)
         return
-    }
+    }*/
 
-    verifyPunctuation()
-}
+    //verifyPunctuation()
+
+    
