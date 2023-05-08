@@ -401,8 +401,7 @@ i:hover::after {
 
     .content-main__show-message {
         width: 90vw;
-        /* max-height: 50vh; */
-        max-height: 20vh;
+        max-height: 50vh;
         margin: 6.4rem 3rem 3rem;
     }
 

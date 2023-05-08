@@ -7,3 +7,7 @@ export const showMessageArea = document.querySelector(".area-show-message")
 export const resultMessage = document.querySelector("#result-message")
 export const copyButton = document.querySelector("#copy-button")
 
+
+
+// RELEASES WHEN THE MVP ARE DONE
+// CHANGE P RESULT TO TEXTAREA!
