@@ -36,6 +36,21 @@ decryptionButton.addEventListener("click", () => {
     }
 })
 
+copyButton.addEventListener("click", () => {
+    
+    if(resultMessage){
+        copyText()
+    }
+    else{
+        Swal.fire({
+            title      : "Nenhuma mensagem para copiar",
+            text       : "Este campo está vazio",
+            icon       : "error",
+            background : "#F3F5FC"
+        })
+    }
+})
+
 function cryptograph(){
     
     let getText = textField.value.split(" ")
@@ -56,14 +71,7 @@ function cryptograph(){
                                             .replace(/u/gi, "ufat")
                                         } `
         }
-        else{
-            Swal.fire({
-                title      : "Nenhuma mensagem para criptografar",
-                text       : "Por favor, digite palavras com pelo menos uma das vogais: a - e - i - o - u",
-                icon       : "error",
-                background : "#F3F5FC"
-            })
-        }
+        
     }
 
     return
@@ -87,16 +95,31 @@ function decryption(){
                                             .replace(/ufat/gi, "u")
                                         } `
         }
-        else{
-            Swal.fire({
-                title      : "Nenhuma mensagem para descriptografar",
-                text       : "Por favor, digite palavras com pelo menos uma das vogais: a - e - i - o - u",
-                icon       : "error",
-                background : "#F3F5FC"
-            })
-        }
+
     }
 
+    return
+}
+
+function copyText(){
+    
+    let textToCopy = resultMessage.textContent
+    
+    if(textToCopy){
+
+        navigator.clipboard.writeText(textToCopy)
+        copyButton.innerHTML = "Copiado!"
+        resultMessage.innerHTML = ""
+
+        cryptographButton.addEventListener("click", () => {
+            copyButton.innerHTML = "Copiar"
+        })
+
+        decryptionButton.addEventListener("click", () => {
+            copyButton.innerHTML = "Copiar"
+        })
+    }
+    
     return
 }
 
