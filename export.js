@@ -9,6 +9,5 @@ export const copyButton = document.querySelector("#copy-button")
 
 
 
-// RELEASES WHEN THE MVP ARE DONE
 // CHANGE P RESULT TO TEXTAREA!
-// REGEX TO ONLY A CONSONANT ON TEXTAREA (Swal.fire (error))
+// REGEX TO ONLY A CONSONANT OR A-Z UPPER CASE ON TEXTAREA (Swal.fire (error))

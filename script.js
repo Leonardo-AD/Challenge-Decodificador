@@ -5,6 +5,7 @@ import {
     copyButton
 } from "./export.js";
 
+
 cryptographButton.addEventListener("click", () => {
     
     if(!textField.value || textField.value == " "){
@@ -17,9 +18,27 @@ cryptographButton.addEventListener("click", () => {
         })
     }
     else{
-        cryptograph()
+
+        let textToCheck = textField.value
+        let regexp = new RegExp(/[!@#$%¨&+-.ºª;:*'"áéíóúãõâêîôûàèìòùäëïöü]+/g)
+
+        let checking = regexp.exec(textToCheck)
+
+        if(checking){
+
+            Swal.fire({
+                title      : `Não foi possível criptografar`,
+                text       : `Remova o(s) seguinte(s) caractere(s): ${checking}`,
+                icon       : `error`,
+                background : `#F3F5FC`
+            })
+        }
+        else{
+            cryptograph()
+        }
     }
 })
+
 
 decryptionButton.addEventListener("click", () => {
     
@@ -32,9 +51,27 @@ decryptionButton.addEventListener("click", () => {
         })
     }
     else{
-        decryption()
+
+        let textToCheck = textField.value
+        let regexp = new RegExp(/[!@#$%¨&+-.ºª;:*'"áéíóúãõâêîôûàèìòùäëïöü]+/g)
+
+        let checking = regexp.exec(textToCheck)
+
+        if(checking){
+
+            Swal.fire({
+                title      : `Não foi possível criptografar`,
+                text       : `Remova o(s) seguinte(s) caractere(s): ${checking}`,
+                icon       : `error`,
+                background : `#F3F5FC`
+            })
+        }
+        else{
+            decryption()
+        }
     }
 })
+
 
 copyButton.addEventListener("click", () => {
     
@@ -51,8 +88,9 @@ copyButton.addEventListener("click", () => {
     }
 })
 
+
 function cryptograph(){
-    
+
     let getText = textField.value.split(" ")
 
     for(let i = 0; i < getText.length; i++){
@@ -64,18 +102,18 @@ function cryptograph(){
             copyButton.style.display      = "inline"    
             
             resultMessage.innerHTML += `${getText[i]
-                                            .replace(/e/gi, "enter")
-                                            .replace(/i/gi, "imes")
-                                            .replace(/a/gi, "ai")
-                                            .replace(/o/gi, "ober")
-                                            .replace(/u/gi, "ufat")
+                                            .replace(/e/g, "enter")
+                                            .replace(/i/g, "imes")
+                                            .replace(/a/g, "ai")
+                                            .replace(/o/g, "ober")
+                                            .replace(/u/g, "ufat")
                                         } `
         }
-        
     }
 
     return
 }
+
 
 function decryption(){
     let setText = textField.value.split(" ")
@@ -88,18 +126,18 @@ function decryption(){
             copyButton.style.display      = "inline"
 
             resultMessage.innerHTML += `${setText[i]
-                                            .replace(/enter/gi, "e")
-                                            .replace(/imes/gi, "i")
-                                            .replace(/ai/gi, "a")
-                                            .replace(/ober/gi, "o")
-                                            .replace(/ufat/gi, "u")
+                                            .replace(/enter/g, "e")
+                                            .replace(/imes/g, "i")
+                                            .replace(/ai/g, "a")
+                                            .replace(/ober/g, "o")
+                                            .replace(/ufat/g, "u")
                                         } `
         }
-
     }
 
     return
 }
+
 
 function copyText(){
     
