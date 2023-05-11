@@ -68,7 +68,7 @@ textarea::placeholder {
     gap: .8rem;
     align-items: center;
     justify-content: flex-start;
-    padding-left: 12.7rem;
+    padding: 0 3rem 0 12.7rem;
 }
 
 .caution-text span {

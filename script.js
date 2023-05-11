@@ -1,6 +1,6 @@
 // Importing variables
 import { 
-    cryptographButton, decryptionButton, 
+    cryptographButton, decryptionButton, hint,
     textField, showMessageArea, resultMessage,
     copyButton
 } from "./export.js";
@@ -20,11 +20,16 @@ cryptographButton.addEventListener("click", () => {
     else{
 
         let textToCheck = textField.value
-        let regexp = new RegExp(/[!@#$%¨&+-.ºª;:*'"áéíóúãõâêîôûàèìòùäëïöü]+/g)
+        let regexp = new RegExp(/[!?@#/$%¨&+-.ºª;:*'"áéíóúãõâêîôûàèìòùäëïöüA-Z0-9]+/g)
 
         let checking = regexp.exec(textToCheck)
 
-        if(checking){
+        if(!checking){
+
+            cryptograph()
+            textField.style.background = ""
+        }
+        else{
 
             Swal.fire({
                 title      : `Não foi possível criptografar`,
@@ -32,9 +37,9 @@ cryptographButton.addEventListener("click", () => {
                 icon       : `error`,
                 background : `#F3F5FC`
             })
-        }
-        else{
-            cryptograph()
+
+            textField.style.background = "#ffdddd"
+            alertHint()
         }
     }
 })
@@ -53,21 +58,26 @@ decryptionButton.addEventListener("click", () => {
     else{
 
         let textToCheck = textField.value
-        let regexp = new RegExp(/[!@#$%¨&+-.ºª;:*'"áéíóúãõâêîôûàèìòùäëïöü]+/g)
+        let regexp = new RegExp(/[!?@#/$%¨&+-.ºª;:*'"áéíóúãõâêîôûàèìòùäëïöüA-Z0-9]+/g)
 
         let checking = regexp.exec(textToCheck)
 
-        if(checking){
+        if(!checking){
+
+            decryption()
+            textField.style.background = ""
+        }
+        else{
 
             Swal.fire({
-                title      : `Não foi possível criptografar`,
+                title      : `Não foi possível descriptografar`,
                 text       : `Remova o(s) seguinte(s) caractere(s): ${checking}`,
                 icon       : `error`,
                 background : `#F3F5FC`
             })
-        }
-        else{
-            decryption()
+
+            textField.style.background = "#ffdddd"
+            alertHint()
         }
     }
 })
@@ -108,7 +118,11 @@ function cryptograph(){
                                             .replace(/o/g, "ober")
                                             .replace(/u/g, "ufat")
                                         } `
+            
+            cryptographButton.innerHTML = "Criptografado!"
         }
+
+        setTimeout(() => { cryptographButton.innerHTML = "Criptografar" }, 3000)   
     }
 
     return
@@ -132,7 +146,11 @@ function decryption(){
                                             .replace(/ober/g, "o")
                                             .replace(/ufat/g, "u")
                                         } `
+                            
+            decryptionButton.innerHTML = "Descriptografado!"
         }
+
+        setTimeout(() => { decryptionButton.innerHTML = "Descriptografar" }, 3000)
     }
 
     return
@@ -161,47 +179,21 @@ function copyText(){
     return
 }
 
-    // function regexpExec() {
-    //     let regexp = new RegExp(/[*&$#@!++]/i)
-    //     let n = regexp.exec(textField.value)   
+
+function alertHint(){
+                
+    let alertHint = setInterval(() => {
+
+        hint.style.visibility = (hint.style.visibility == "hidden"? "" : "hidden")
         
-    //     if(n){
-    //         alert("Remova: " + n);
-    //     }
-    //     else{
-    //         console.log("Encrypted")
-    //     }
+    }, 500)
 
-    //     return
-    // }
+    setTimeout(() => { 
+
+        clearInterval(alertHint) 
+        hint.style.visibility = ""
+
+    }, 6000) 
     
-    // regexpExec()
-
-    // const sentence = 'A ticket to 大阪 costs ¥2000 👌.';
-
-    // const regexpEmojiPresentation = /\p{Emoji_Presentation}/gu;
-    // console.log(sentence.match(regexpEmojiPresentation));
-    // // Expected output: Array ["👌"]
-
-    // const regexpNonLatin = /\P{Script_Extensions=Latin}+/gu;
-    // console.log(sentence.match(regexpNonLatin));
-    // // Expected output: Array [" ", " ", " 大阪 ", " ¥2000 👌."]
-
-    // const regexpCurrencyOrPunctuation = /\p{Sc}|\p{P}/gu;
-    // console.log(sentence.match(regexpCurrencyOrPunctuation));
-
-    /*function verifyPunctuation(){
-        const sentence = textField.value
-        const regexpCurrencyOrPunctuation = /\p{Sc}|\p{P}|\p{Sm}|\p{Lu}/gu;
-        console.log(sentence.match(regexpCurrencyOrPunctuation))
-        // get uppercase \p{Lu}
-        // get accent ?     pulse alert icon 
-        //edit variables and function name
-
-        // https://javascript.info/regexp-introduction#testing-regexp-test --- (Test with á é í ó ú)
-        return
-    }*/
-
-    //verifyPunctuation()
-
-    
+    return
+}
