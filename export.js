@@ -7,7 +7,3 @@ export const textField       = document.querySelector("#text-field")
 export const showMessageArea = document.querySelector(".area-show-message")
 export const resultMessage   = document.querySelector("#result-message")
 export const copyButton      = document.querySelector("#copy-button")
-
-
-
-// CHANGE P RESULT TO TEXTAREA!

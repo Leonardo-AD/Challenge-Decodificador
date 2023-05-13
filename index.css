@@ -47,6 +47,7 @@ body {
     padding: .8rem;
     width: 66rem;
     height: 44rem;
+    font-family: 'inter', sans-serif;
     font-size: 3.2rem;
 
     color: var(--primary-text-color);
@@ -126,21 +127,22 @@ textarea::placeholder {
     box-shadow: 0 2.4rem 3.2rem -.8rem rgba(0, 0, 0, 8%);
 }
 
-.content-main__show-message p {
+.content-main__show-message textarea {
     font-size: 2.4rem;
     line-height: 150%;
     color: var(--regular-text-color);
     text-align: left;
     margin: 0 0 3.7rem;
+    font-family: 'inter', sans-serif;
     flex: 1;
-    display: inline-block;
+    
     width: 33rem;
     max-height: 52rem;
-    display: none;
-}
 
-.area-show-message {
-    /* display: none; */
+    border: none;
+    outline: none;
+    resize: none; 
+    display: none;
 }
 
 .area-show-message h3 {
@@ -241,7 +243,7 @@ i:hover::after {
         min-width: 36rem;
     }
 
-    .content-main__show-message p {
+    .content-main__show-message textarea {
         width: 28rem;
         margin: 0 0 5.4rem;
     }
@@ -280,7 +282,7 @@ i:hover::after {
         margin-left: 6rem;
     }
 
-    .content-main__show-message p {
+    .content-main__show-message textarea {
         width: 26rem;
         font-size: 2rem;
         margin: 0 0 5.4rem;
@@ -321,7 +323,7 @@ i:hover::after {
         margin-left: 2rem;
     }
 
-    .content-main__show-message p {
+    .content-main__show-message textarea {
         width: 26rem;
         font-size: 2rem;
         margin: 0 0 5.4rem;
@@ -359,7 +361,7 @@ i:hover::after {
     
     .content-main__show-message {
         width: 90vw;
-        max-height: 15vh;
+        max-height: 50vh;
         margin: 6.4rem 3rem 3rem;
     }
 
@@ -375,7 +377,7 @@ i:hover::after {
         display: none;
     }
     
-    .content-main__show-message p {
+    .content-main__show-message textarea {
         min-width: 84vw;
         margin: 0 0 3.2rem;
     }
@@ -390,7 +392,7 @@ i:hover::after {
         height: 100vh;
     }
 
-    .content-main__show-message p {
+    .content-main__show-message textarea {
         min-width: 80vw;
         margin: 0 0 3.2rem;
     }
@@ -421,6 +423,7 @@ i:hover::after {
 
     .content-main__show-message {
         margin-top: 6.4rem;
+        max-height: 50vh;
     }
     
     .action-buttons button {
@@ -428,7 +431,7 @@ i:hover::after {
         margin-bottom: 3.2rem;
     }
 
-    .content-main__show-message p {
+    .content-main__show-message textarea {
         min-width: 75vw;
         margin: 0 0 3.2rem;
     }
@@ -459,9 +462,10 @@ i:hover::after {
 
     .content-main__show-message {
         margin-top: 6.4rem;
+        max-height: 50vh;
     }
 
-    .content-main__show-message p {
+    .content-main__show-message textarea {
         min-width: 75vw;
         margin: 0 0 3.2rem;
     }
@@ -481,6 +485,6 @@ i:hover::after {
     }
 
     .content-main__show-message {
-        max-height: 32vh;
+        max-height: 50vh;
     }
 }
