@@ -19,10 +19,83 @@
     --secondary-text-color: #FFFFFF;
     --regular-text-color: #495057;
     --bold-text-color: #343A40;
+
+    --scrollbar-bg: #b7b7b7;
+    --bg-button-hover: #e8eaf3;
+    --copy-bg-button: #f8f8f8;
+    --selection-bg-color: #165cb1; 
+}
+
+.dark-mode {
+    --bg-color: #0f0f0f;
+    --show-message-bg: #0b0b0b;
+    --primary-button-color: #0A3871;
+    --secondary-button-color: #0f0f0f;
+    
+    --primary-text-color: #0A3871;
+    --secondary-text-color: #8c8c8c;
+    --regular-text-color: #495057;
+    --bold-text-color: #30343a;
+
+    --scrollbar-bg: #272727;
+    --bg-button-hover: #151515;
+    --copy-bg-button: #0e0e0e;
+    --selection-bg-color: #165cb1;
 }
 
 body { 
     background: var(--bg-color);
+}
+
+
+/* Selection style */
+::selection{
+    background: var(--primary-text-color);
+    color: var(--secondary-text-color);
+}
+
+::-moz-selection{
+    background: var(--primary-text-color);
+    color: var(--secondary-text-color);
+}
+
+
+/* Scrollbar style */
+::-webkit-scrollbar {
+    width: .7rem;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-bg);
+    border-radius: 5rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0A3871;
+    border-radius: 5rem;
+}
+
+
+/* Sweet alert popup color */
+.swal2-popup {
+    background: var(--bg-color);
+}
+
+.swal2-actions button.swal2-confirm {
+    background: var(--primary-button-color);
+    color: var(--secondary-text-color);
+}
+
+
+/* General button animation */
+.content-main button {
+    box-shadow: 0 1rem 1rem -1.5rem var(--bold-text-color);
+}
+
+.content-main button:active {
+    border-color: var(--primary-text-color);
+    box-shadow: .4rem .6rem .5rem -.8rem black;
+    transform: translateY(.09rem);
 }
 
 
@@ -40,6 +113,23 @@ body {
 .text-area > img {
     margin: 3rem 4rem 3rem 4rem;
     vertical-align: top
+}
+
+.text-area {
+    position: relative;
+}
+
+.text-area span {
+    text-shadow: 0 0 1.2rem rgba(0, 0, 0, 15%);
+}
+
+.text-area i {
+    position: absolute;
+    left: 95%;
+    margin: 4.3rem 0;
+    font-size: 2.4rem;
+    color: var(--primary-button-color);
+    cursor: pointer;
 }
 
 .content-main .text-area textarea {
@@ -90,14 +180,18 @@ textarea::placeholder {
     border: none;
     border-radius: 2.4rem;
     cursor: pointer;
-    width: 32rem;
+    width: 31rem;
     text-align: center;
 }
 
 .action-buttons .cryptograph-button {
     background: var(--primary-button-color);
-    color: var(--secondary-text-color);
+    color: var(--bg-color);
     letter-spacing: .05rem;
+}
+
+.action-buttons .cryptograph-button:hover {
+    opacity: .9;
 }
 
 .action-buttons .decryption-button {
@@ -105,6 +199,10 @@ textarea::placeholder {
     color: var(--primary-text-color);
     border: 1px solid var(--primary-button-color);
     letter-spacing: .05rem;
+}
+
+.action-buttons .decryption-button:hover {
+    background-color: var(--bg-button-hover);
 }
 
 
@@ -138,7 +236,9 @@ textarea::placeholder {
     
     width: 33rem;
     max-height: 52rem;
+    padding-right: .5rem;
 
+    background: var(--show-message-bg);
     border: none;
     outline: none;
     resize: none; 
@@ -178,6 +278,10 @@ textarea::placeholder {
     letter-spacing: .05rem;
 }
 
+.content-main__show-message button:hover {
+    background: var(--copy-bg-button);
+}
+
 
 /* Contact area */
 .contact-area {
@@ -190,24 +294,24 @@ textarea::placeholder {
 }
 .contact-area p {
     margin-top: 1.6rem;
-    color: var(--secondary-text-color);
+    color: var(--bg-color);
     font-size: 1.4rem;
 }
 
 .contact-area-links a {
     font-size: 2.8rem;
-    color: var(--secondary-text-color);
+    color: var(--bg-color);
     text-decoration: none;
     margin: 0 .8rem;
 }
 
-i {
+.contact-area-links i {
     display: inline-block;
     position: relative;
-    color: var(--secondary-text-color);
+    color: var(--bg-color);
 }
   
-i::after {
+.contact-area-links i::after {
   content: '';
   position: absolute;
   width: 100%;
@@ -215,25 +319,34 @@ i::after {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: var(--secondary-text-color);
+  background-color: var(--bg-color);
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
   
-i:hover::after {
+.contact-area-links i:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+.contact-area p::selection {
+    background: var(--selection-bg-color);
 }
 
 
 /* Responsivity */
 @media screen and (max-width: 1250px) {
+    ::-webkit-scrollbar {
+        width: .4rem;
+    }
+
+
     .action-buttons button {
         width: 28rem;
     }
 
     .content-main .text-area textarea {
-        margin: 2rem 3rem 3rem 3rem;
+        margin: 2rem 5rem 3rem 3rem;
         padding: .8rem;
         width: 60rem;
     }
@@ -262,12 +375,16 @@ i:hover::after {
 }
 
 @media screen and (max-width: 1150px) {
+    ::-webkit-scrollbar {
+        width: .4rem;
+    }
+
     .action-buttons button {
         width: 25rem;
     }
 
     .content-main .text-area textarea {
-        margin: 2rem 5rem 3rem 3rem;
+        margin: 2rem 7rem 3rem 3rem;
         padding: .8rem;
         width: 55rem;
         font-size: 2.8rem;
@@ -307,6 +424,14 @@ i:hover::after {
 }
 
 @media screen and (max-width: 1030px) {
+    ::-webkit-scrollbar {
+        width: .4rem;
+    }
+
+    .text-area i {
+        left: 93%;
+    }
+
     .content-main .text-area textarea {
         margin: 2rem 0 3rem 3rem;
         padding: .8rem;
@@ -331,9 +456,17 @@ i:hover::after {
 }
 
 @media screen and (max-width: 940px) {
+    ::-webkit-scrollbar {
+        width: .4rem;
+    }
+
     .content-main {
         flex-wrap: wrap;
         justify-content: center;
+    }
+
+    .text-area i {
+        left: 92%;
     }
 
     .content-main__container {
@@ -388,8 +521,16 @@ i:hover::after {
 }
 
 @media screen and (max-width: 600px) {
+    ::-webkit-scrollbar {
+        width: .4rem;
+    }
+
     .content-main__container {
         height: 100vh;
+    }
+
+    .text-area i {
+        left: 89%;
     }
 
     .content-main__show-message textarea {
@@ -413,8 +554,16 @@ i:hover::after {
 }
 
 @media screen and (max-width: 420px) {
+    ::-webkit-scrollbar {
+        width: .4rem;
+    }
+
     .content-main__container {
         height: 100vh;
+    }
+
+    .text-area i {
+        left: 85%;
     }
 
     .action-buttons {
@@ -442,8 +591,16 @@ i:hover::after {
 }
 
 @media screen and (max-width: 360px) {
+    ::-webkit-scrollbar {
+        width: .4rem;
+    }
+
     .content-main__container {
         height: 100vh;
+    }
+
+    .text-area i {
+        left: 82%;
     }
 
     .content-main .text-area textarea {
@@ -476,6 +633,10 @@ i:hover::after {
 }
 
 @media screen and (max-width: 350px) {
+    ::-webkit-scrollbar {
+        width: .4rem;
+    }
+
     .content-main__container {
         height: 100vh;
     }

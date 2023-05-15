@@ -2,7 +2,7 @@
 import { 
     cryptographButton, decryptionButton, hint,
     textField, showMessageArea, resultMessage,
-    copyButton
+    copyButton, changeTheme
 } from "./export.js";
 
 
@@ -13,14 +13,13 @@ cryptographButton.addEventListener("click", () => {
         Swal.fire({
             title      : "Nenhuma mensagem para criptografar",
             text       : "Por favor, digite alguma mensagem com letras minúsculas, sem acentos e sem caracteres especiais.",
-            icon       : "error",
-            background : "#F3F5FC"
+            icon       : "error"
         })
     }
     else{
 
         let textToCheck = textField.value
-        let regexp = new RegExp(/[!?@#/$%¨&+-.ºª;:*'"áéíóúãõâêîôûàèìòùäëïöüA-Z0-9]+/g)
+        let regexp = new RegExp(/[|!?@#/$%¨&+-.ºª;:*'"áéíóúãõâêîôûàèìòùäëïöüçÇA-Z0-9]+/g)
 
         let checking = regexp.exec(textToCheck)
 
@@ -34,11 +33,9 @@ cryptographButton.addEventListener("click", () => {
             Swal.fire({
                 title      : `Não foi possível criptografar`,
                 text       : `Remova o(s) seguinte(s) caractere(s): ${checking}`,
-                icon       : `error`,
-                background : `#F3F5FC`
+                icon       : `error`
             })
 
-            textField.style.background = "#ffdddd"
             alertHint()
         }
     }
@@ -51,14 +48,13 @@ decryptionButton.addEventListener("click", () => {
         Swal.fire({
             title      : "Nenhuma mensagem para descriptografar",
             text       : "Por favor, digite alguma mensagem com letras minúsculas, sem acentos e sem caracteres especiais.",
-            icon       : "error",
-            background : "#F3F5FC"
+            icon       : "error"
         })
     }
     else{
 
         let textToCheck = textField.value
-        let regexp = new RegExp(/[!?@#/$%¨&+-.ºª;:*'"áéíóúãõâêîôûàèìòùäëïöüA-Z0-9]+/g)
+        let regexp = new RegExp(/[|!?@#/$%¨&+-.ºª;:*'"áéíóúãõâêîôûàèìòùäëïöüçÇA-Z0-9]+/g)
 
         let checking = regexp.exec(textToCheck)
 
@@ -72,14 +68,22 @@ decryptionButton.addEventListener("click", () => {
             Swal.fire({
                 title      : `Não foi possível descriptografar`,
                 text       : `Remova o(s) seguinte(s) caractere(s): ${checking}`,
-                icon       : `error`,
-                background : `#F3F5FC`
+                icon       : `error`
             })
 
-            textField.style.background = "#ffdddd"
             alertHint()
         }
     }
+})
+
+
+changeTheme.addEventListener("click", () => {
+
+    let themeColor = document.body
+
+    themeColor.classList.toggle("dark-mode")
+    
+    changeTheme.className == "ph-fill ph-moon"? changeTheme.className = "ph-fill ph-sun" : changeTheme.className = "ph-fill ph-moon"
 })
 
 
@@ -92,8 +96,7 @@ copyButton.addEventListener("click", () => {
         Swal.fire({
             title      : "Nenhuma mensagem para copiar",
             text       : "Este campo está vazio",
-            icon       : "error",
-            background : "#F3F5FC"
+            icon       : "error"
         })
     }
 })
